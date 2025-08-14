@@ -1,0 +1,336 @@
+:root{
+  --pink:#ff6ea6;         /* sweet pink */
+  --pink-soft:#ffc2d9;    /* lighter pink */
+  --blue:#bfe6ff;         /* light blue */
+  --black:#111;
+  --ink:#333;
+  --bg:#fff7fb;           /* very light pink background */
+  --border:#ffd6e7;
+}
+
+* {
+    box-sizing:border-box
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+}
+
+.site-header {
+  background-color: rgb(240, 132, 216);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 2px solid var(--border);
+}
+
+.brand {
+    text-shadow: 1px 1px 2px red, 0 0 1em cornflowerblue, 0 0 0.2em cornflowerblue;
+    height: 70%;
+    font-weight: 800;
+    letter-spacing: .6px;
+    color: var(--black);
+}
+
+.brand:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-out;
+    text-shadow: 1px 1px 2px red, 0 0 3em cornflowerblue, 0 0 0.3em cornflowerblue;
+    height: 70%;
+    font-weight: 600;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.nav button {
+    color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    border-radius: 6px;
+    background-color: white;
+    margin: 0 6px;
+    padding: 8px 10px;
+    cursor :pointer;
+    font-weight: 600;
+}
+
+.nav .btn-home {
+    color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    border-radius: 6px;
+}
+
+.nav button:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease-in-out;
+    color: var(--black);
+    border: 2px solid var(--black);
+    border-radius: 6px;
+    background-color: cornflowerblue;
+    box-shadow: 0px 0px 4px var(--black);
+}
+
+.nav .btn-logout {
+    color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    border-radius: 6px;
+}
+
+.nav .btn-logout:hover {
+     background-color: red;
+}
+
+.save, .cancel {
+    color: var(--pink);
+    border: 2px solid cornflowerblue;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.container {
+    max-width: 980px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+.flash {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);top:70px;
+    background: var(--pink);
+    color:#fff;
+    padding:10px 16px;
+    border-radius: 8px;
+    display:none;
+    z-index: 5;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 20px;
+    align-items: center;
+}
+
+.hero-img img {
+    width: 60%;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid var(--pink-soft);
+}
+
+.hero-text h1 {
+    font-size: 2.2rem;
+    margin:.4rem 0
+}
+
+.hero-text .btn-primary {
+    margin-top:8px
+}
+
+.services h2 {
+    margin-top: 32px
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 16px;
+    margin-top: 12px;
+
+}
+.card {
+    background:#fff;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+}
+
+.card-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: var(--blue);
+    overflow:hidden;
+    margin-bottom:10px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease;
+    box-shadow: 0px 0px 10px var(--pink);
+}
+
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+.form label {
+    display: block;
+    font-weight: 600;
+    margin:10px 0 6px;
+}
+
+.form input,.form select,.form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--border);border-radius:8px;
+  background:#fff;
+}
+
+.form button {
+    margin-top:10px;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color:#fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+
+}
+
+.btn-primary:hover {
+  transform: scale(1.2);
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 8px var(--black);
+  background: var(--pink);
+  color: var(--black);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 2px cornflowerblue;
+
+}
+
+.link {
+    border: none;
+    background: none;
+    color: var(--pink);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.capacity-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:8px 0 12px;
+}
+
+.tag {
+    background: var(--blue);
+    padding: 6px 10px;
+    border-radius: 999px;
+    border:1px solid #a7d9f8;
+}
+
+.list .booking{
+  background:#fff;
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  margin:8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.booking .meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.badge {
+    background: var(--pink-soft);
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+}
+
+.booking .actions button {
+    margin-left: 6px;
+}
+
+.site-footer {
+    padding: 30px 16px;
+    text-align: center;
+    color:#666;
+}
+
+dialog {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px;
+}
+
+menu {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.muted {
+    color:#666;
+}
+
+.see-more {
+    color: cornflowerblue;
+    font-weight: 800;
+    text-decoration: #1877F2;
+}
+
+.see-more:hover {
+    color: palevioletred;
+    font-weight: 800;
+    text-decoration: palevioletred;
+}
+
+.massage, .menicure, .waxing, .weave {
+    text-decoration: cornflowerblue;
+}
+
+.social-icons a {
+  color: #333;
+  font-size: 24px;
+  margin: 0 10px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+.social-icons .fa-instagram:hover { color: #E1306C; }
+.social-icons .fa-facebook-f:hover { color: #1877F2; }
+.social-icons .fa-tiktok:hover { color: #000; }
+.social-icons .fa-whatsapp:hover { color: #25D366; }

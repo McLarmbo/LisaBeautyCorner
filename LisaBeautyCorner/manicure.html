@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lisa's Beauty Corner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">Lisa's Beauty Corner</div>
+    <nav class="nav">
+      <button data-route="home" id="nav-home"><a class="menicure" href="lisa.html">Home</a></button>
+      <button data-route="login" id="nav-login">Login</button>
+      <button data-route="register" id="nav-register">Register</button>
+      <button data-route="dashboard" id="nav-dashboard" class="hidden">My Bookings</button>
+      <button id="btn-logout" class="btn-logout hidden">Logout</button>
+    </nav>
+  </header>
+
+  <div id="flash" class="flash"></div>
+
+  <main class="container">
+    <!-- HOME -->
+    <section id="view-home" class="view active">
+      <section class="hero">
+        <div class="hero-img">
+          <img src="images/hero.jpg" alt="Salon hero" />
+        </div>
+        <div class="hero-text">
+          <h1>Look good. Feel great.</h1>
+          <p>Book your pamper session with <strong>Lisa's Beauty Corner</strong>.</p>
+          <button data-route="register" class="btn-primary">Get Started</button>
+        </div>
+      </section>
+
+      <section class="services">
+        <h2>Types of Manicure & Pedicure we offer.</h2>
+        <div class="grid">
+          <article class="card">
+            <div class="card-img"><img src="images/pies.jpg" alt="Manicure and Pedicure" /></div>
+            <h3>Basic Pedicure</h3>
+            <p>This is the most common type, involving a warm foot soak, nail trimming, filing, cuticle care, and a polish application. It's a straightforward treatment ideal for maintaining healthy feet.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-img"><img src="images/para-pedicure.jpg" alt="Weave installation" /></div>
+            <h3>Parrafin Pedicure</h3>
+            <p>Involves dipping the feet in warm paraffin wax, which helps to moisturize and soften the skin. This treatment is particularly beneficial for dry or cracked feet.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-img"><img src="images/acrylic-manicure.jpg" alt="Massage" /></div>
+            <h3>Acrylic Manicure</h3>
+            <p>Involves applying a mixture of liquid and powder to create a hard protective layer over the natural nails. This method is popular for those wanting longer nails.</p>
+          </article>
+
+          <article class="card">
+            <div class="card-img"><img src="images/75.jpg" alt="Waxing" /></div>
+            <h3>Gel Manicure</h3>
+            <p>Similar to a regular manicure but uses gel polish for a longer-lasting finish. The gel is cured under UV light, making it more durable.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+
+    <!-- LOGIN -->
+    <section id="view-login" class="view">
+      <h2>Login</h2>
+      <form id="form-login" class=" form">
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Password
+          <input type="password" name="password" required minlength="4" />
+        </label>
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p class="muted">No account? <button data-route="register" class="link">Register</button></p>
+    </section>
+
+    <!-- REGISTER -->
+    <section id="view-register" class="view">
+      <h2>Create your account</h2>
+      <form id="form-register" class=" form">
+        <label>Full name
+          <input type="text" name="name" required />
+        </label>
+        <label>Email
+          <input type="email" name="email" required />
+        </label>
+        <label>Password
+          <input type="password" name="password" required minlength="4" />
+        </label>
+        <button type="submit" class="btn-primary">Register</button>
+      </form>
+      <p class="muted">Already have an account? <button data-route="login" class="link">Login</button></p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="view-dashboard" class="view">
+      <h2>Book an appointment</h2>
+      <div class="capacity-line">
+        <span>Daily capacity: <strong>50</strong></span>
+        <span id="capacity-info" class="tag">Pick a date</span>
+      </div>
+
+      <form id="form-book" class="form">
+        <label>Service
+          <select name="service" required>
+            <option value="">Select service</option>
+            <option>Manicure and Pedicure</option>
+            <option>Weave installation</option>
+            <option>Massage</option>
+            <option>Waxing</option>
+          </select>
+        </label>
+        <label>Date
+          <input type="date" name="date" id="book-date" required />
+        </label>
+        <label>Note (optional)
+          <textarea name="note" rows="2" placeholder="Any notes..."></textarea>
+        </label>
+        <button type="submit" class="btn-primary">Book</button>
+      </form>
+
+      <h3>Your appointments</h3>
+      <div id="my-bookings" class="list"></div>
+    </section>
+
+    <!-- EDIT MODAL -->
+    <dialog id="edit-dialog">
+      <form method="dialog" id="form-edit" class="form">
+        <h3>Edit appointment date</h3>
+        <input type="hidden" name="id" />
+        <label>New date
+          <input type="date" name="date" id="edit-date" required />
+        </label>
+        <menu>
+          <button value="cancel">Cancel</button>
+          <button id="save-edit" value="default">Save</button>
+        </menu>
+      </form>
+    </dialog>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="social-icons">
+      <p>Contact Us.</p>
+       <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+       <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+       <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+       <a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <br>
+    <small>© 2025 Lisa's Beauty Corner</small>
+  </footer>
+
+
+  <script src="app.js"></script>
+</body>
+</html>
